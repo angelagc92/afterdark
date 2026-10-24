@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Crea tu cuenta | Afterdark</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { noche: '#10071b', lila: '#c9afe8' },
+                    fontFamily: { serif: ['Literata', 'Georgia', 'serif'] },
+                },
+            },
+        }
+    </script>
+    <script src="../js/main.js" defer></script>
+</head>
+
+<body class="relative flex min-h-screen items-center justify-center overflow-hidden bg-noche bg-[url('../assets/img/bg.png')] bg-cover bg-[position:50%_30%] px-4 font-serif text-white">
+    <div class="pointer-events-none fixed inset-0 bg-noche/30"></div>
+
+    <a href="../index.html" class="absolute left-4 top-4 z-10 sm:left-10 sm:top-6">
+        <img src="../assets/img/logo.png" alt="Afterdark" class="h-14 w-auto sm:h-16">
+    </a>
+
+    <main class="relative z-10 w-full max-w-[390px] rounded-3xl bg-[#2a1745]/75 px-7 py-8 backdrop-blur-m sm:px-10">
+        <h1 class="mb-8 text-center text-3xl">Crea tu cuenta</h1>
+
+        <form action="#" method="post" class="flex flex-col">
+
+            <label for="username" class="mb-1 text-sm">Nombre de usuario</label>
+            <div class="mb-3 flex items-center gap-3 rounded-xl bg-[#7650b0] px-3 py-2.5">
+                <img src="../assets/icons/user.svg" alt="" class="h-6 w-6 invert">
+                <input id="username" name="username" type="text" placeholder="Elige un nombre de usuario" required
+                    class="w-full min-w-0 bg-transparent font-sans text-sm text-white outline-none placeholder:text-white">
+            </div>
+
+            <label for="email" class="mb-1 text-sm">Correo electrónico</label>
+            <div class="mb-3 flex items-center gap-3 rounded-xl bg-[#7650b0] px-3 py-2.5">
+                <img src="../assets/icons/mail.svg" alt="" class="h-6 w-6 invert">
+                <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required
+                    class="w-full min-w-0 bg-transparent font-sans text-sm text-white outline-none placeholder:text-white">
+            </div>
+
+            <label for="password" class="mb-1 text-sm">Contraseña</label>
+            <div class="mb-3 flex items-center gap-3 rounded-xl bg-[#7650b0] px-3 py-2.5">
+                <img src="../assets/icons/lock.svg" alt="" class="h-6 w-6 invert">
+                <input id="password" name="password" type="password" placeholder="Mínimo 8 caracteres" minlength="8" required
+                    class="w-full min-w-0 bg-transparent font-sans text-sm text-white outline-none placeholder:text-white">
+                <button type="button" data-toggle-password="password" aria-label="Mostrar contraseña">
+                    <img src="../assets/icons/eye.svg" alt="" class="h-6 w-6 invert">
+                </button>
+            </div>
+
+            <label for="confirm" class="mb-1 text-sm">Confirmar contraseña</label>
+            <div class="flex items-center gap-3 rounded-xl bg-[#7650b0] px-3 py-2.5">
+                <img src="../assets/icons/lock.svg" alt="" class="h-6 w-6 invert">
+                <input id="confirm" name="confirm" type="password" placeholder="Repite tu contraseña" required
+                    class="w-full min-w-0 bg-transparent font-sans text-sm text-white outline-none placeholder:text-white">
+                <button type="button" data-toggle-password="confirm" aria-label="Mostrar contraseña">
+                    <img src="../assets/icons/eye.svg" alt="" class="h-6 w-6 invert">
+                </button>
+            </div>
+
+            <button type="submit" class="mt-8 rounded-full bg-[#d9c8ff] py-2 text-lg text-noche hover:bg-white">Crear cuenta</button>
+        </form>
+
+        <p class="mt-8 text-center text-sm">¿Ya tienes cuenta? <a href="login.html" class="font-semibold hover:underline">Iniciar sesión</a></p>
+    </main>
+</body>
+
+</html>

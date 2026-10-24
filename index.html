@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Afterdark | Inicio</title>
+
+        <!-- Tailwind por CDN: no hace falta instalar nada -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Fuente serif provisional (cámbiala por la de tu Figma cuando me digas cuál es) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600&display=swap" rel="stylesheet">
+
+        <!-- Aquí definimos nuestros colores y la fuente para usarlos como clases: bg-noche, text-lila, font-serif... -->
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            noche: '#10071b',   // fondo más oscuro (header, footer)
+                            violeta: '#9b72cf', // tarjetas de género / acentos
+                            lila: '#c9afe8',    // tarjetas de libros (placeholder)
+                        },
+                        fontFamily: { serif: ['Literata', 'Georgia', 'serif'] },
+                    },
+                },
+            }
+        </script>
+        <script src="js/main.js" defer></script>
+    </head>
+
+    <body class="min-h-screen bg-noche font-serif text-white">
+
+        <!-- ============ CABECERA ============ -->
+        <header class="flex flex-wrap items-center gap-x-3 gap-y-2 bg-noche px-4 py-3 sm:gap-x-6 sm:px-6">
+            <a href="index.html" class="shrink-0">
+                <img src="assets/img/logo.png" alt="Afterdark" class="h-10 w-auto sm:h-12">
+            </a>
+
+            <nav
+                class="order-last flex w-full justify-between text-sm text-white/90 sm:order-none sm:w-auto sm:justify-start sm:gap-5 sm:text-base">
+                <a href="index.html" class="hover:text-lila">Inicio</a>
+                <a href="#explorar" class="hover:text-lila">Explorar</a>
+                <a href="#generos" class="hover:text-lila">Géneros</a>
+                <a href="#novedades" class="hover:text-lila">Novedades</a>
+            </nav>
+
+            <!-- Buscador (todavía no busca nada: se conectará con la base de datos) -->
+            <form id="search-form"
+                class="ml-auto flex w-32 items-center gap-2 rounded-full bg-[#7650b0] px-3 py-1 sm:w-48">
+                <img src="assets/icons/search.svg" alt="" class="h-4 w-4 shrink-0 invert" >
+                <input type="search" placeholder="Buscar libros, autores..." aria-label="Buscar libros"
+                    class="w-full min-w-0 bg-transparent text-xs text-white outline-none placeholder:text-white/80">
+            </form>
+
+            <!-- Iconos: los SVG son negros, la clase "invert" los vuelve blancos -->
+            <div class="flex items-center gap-3">
+                <a href="#favoritos" aria-label="Favoritos"><img src="assets/icons/book-heart.svg" alt=""
+                        class="h-6 w-6 invert"></a>
+                <a href="/pages/login.html" aria-label="Perfil"><img src="assets/icons/circle-user-round.svg" alt=""
+                        class="h-6 w-6 invert"></a>
+            </div>
+        </header>
+
+        <!-- ============ CONTENIDO ============ -->
+        <!-- La ilustración va de fondo en todo <main>; el degradado la oscurece poco a poco hacia abajo -->
+        <main class="relative bg-[url('assets/img/scrollable_bg.png')] bg-cover bg-top bg-no-repeat">
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-noche/10 via-noche/60 to-noche">
+            </div>
+
+            <div class="relative">
+
+                <!-- HERO: panel oscuro y semitransparente. Aquí irán las noticias más adelante. -->
+                <section class="flex h-40 items-center justify-center bg-noche/60 px-4 sm:h-52 md:h-64">
+                    <!-- Futuras noticias: se mostrarán aquí -->
+                </section>
+
+                <!-- ---- NOVEDADES ---- -->
+                <section id="novedades" class="mt-6 pl-4 sm:pl-6">
+                    <h2 class="mb-2 text-sm text-white">Novedades</h2>
+
+                    <!-- Carrusel: overflow-hidden corta lo que no cabe; el degradado de la derecha lo oscurece -->
+                    <div class="relative overflow-hidden">
+                        <div class="flex gap-2 sm:gap-3">
+                            <!-- Futura tarjeta de libro: los datos y la portada vendrán de PHP/MySQL.
+                             Para añadir más, copia y pega un <article>. -->
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila sm:w-[24vw]"></article>
+                        </div>
+                        <!-- Extremo oscurecido: sugiere que hay más contenido -->
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ---- GÉNEROS ---- -->
+                <section id="generos" class="mt-6 pl-4 sm:pl-6">
+                    <h2 class="mb-2 text-sm text-white">Géneros</h2>
+
+                    <div class="relative overflow-hidden">
+                        <div class="flex gap-2 sm:gap-3">
+
+                            <a href="#"
+                                class="relative aspect-[8/3] w-[42vw] shrink-0 overflow-hidden rounded-lg sm:w-[16vw]">
+                                <img src="assets/img/fantasia.png" alt=""
+                                    class="absolute inset-0 h-full w-full object-cover">
+                                <span class="absolute inset-0 bg-noche/40"></span>
+                            </a>
+
+                            <a href="#"
+                                class="relative aspect-[8/3] w-[42vw] shrink-0 overflow-hidden rounded-lg sm:w-[16vw]">
+                                <img src="assets/img/fantasia.png" alt=""
+                                    class="absolute inset-0 h-full w-full object-cover">
+                                <span class="absolute inset-0 bg-noche/40"></span>
+                            
+                            </a>
+
+                            <a href="#"
+                                class="relative aspect-[8/3] w-[42vw] shrink-0 overflow-hidden rounded-lg sm:w-[16vw]">
+                                <img src="assets/img/fantasia.png" alt=""
+                                    class="absolute inset-0 h-full w-full object-cover">
+                                <span class="absolute inset-0 bg-noche/40"></span>
+                            </a>
+
+                            <a href="#"
+                                class="relative aspect-[8/3] w-[42vw] shrink-0 overflow-hidden rounded-lg sm:w-[16vw]">
+                                <img src="assets/img/fantasia.png" alt=""
+                                    class="absolute inset-0 h-full w-full object-cover">
+                                <span class="absolute inset-0 bg-noche/40"></span>            
+                            </a>
+
+                            <a href="#"
+                                class="relative aspect-[8/3] w-[42vw] shrink-0 overflow-hidden rounded-lg sm:w-[16vw]">
+                                <img src="assets/img/fantasia.png" alt=""
+                                    class="absolute inset-0 h-full w-full object-cover">
+                                <span class="absolute inset-0 bg-noche/40"></span>
+                            </a>
+
+                            <a href="#"
+                                class="relative aspect-[8/3] w-[42vw] shrink-0 overflow-hidden rounded-lg sm:w-[16vw]">
+                                <img src="assets/img/fantasia.png" alt=""
+                                    class="absolute inset-0 h-full w-full object-cover">
+                                <span class="absolute inset-0 bg-noche/50"></span>
+                            </a>
+
+                        </div>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ---- MÁS LEÍDOS ---- -->
+                <section class="mb-8 mt-6 pl-4 sm:pl-6">
+                    <h2 class="mb-2 text-sm text-white">Más leídos</h2>
+
+                    <div class="relative overflow-hidden">
+                        <div class="flex gap-2 sm:gap-3">
+                            <!-- Futura tarjeta de libro (más grande que las de Novedades) -->
+                            <article class="aspect-[8/5] w-[62vw] shrink-0 rounded-lg bg-lila sm:w-[31vw]"></article>
+                            <article class="aspect-[8/5] w-[62vw] shrink-0 rounded-lg bg-lila sm:w-[31vw]"></article>
+                            <article class="aspect-[8/5] w-[62vw] shrink-0 rounded-lg bg-lila sm:w-[31vw]"></article>
+                            <article class="aspect-[8/5] w-[62vw] shrink-0 rounded-lg bg-lila sm:w-[31vw]"></article>
+                            <article class="aspect-[8/5] w-[62vw] shrink-0 rounded-lg bg-lila sm:w-[31vw]"></article>
+                        </div>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24">
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <!-- ============ PIE ============ -->
+        <footer class="bg-noche px-4 py-5 sm:px-6">
+            <a href="index.html"><img src="assets/img/logo_book.png" alt="Afterdark" class="h-10 w-auto"></a>
+        </footer>
+
+    </body>
+
+</html>
