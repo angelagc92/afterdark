@@ -2,7 +2,7 @@
 
 AFTERDARK is a web application inspired by streaming platforms, designed for discovering, cataloging, and exploring digital books. The project focuses on dark-mode visual aesthetics, intuitive UI/UX interactions, and full-stack integration.
 
-🔗 **Live Demo:** [https://angelagarcia-dev.github.io/afterdark/](https://angelagarcia-dev.github.io/afterdark/)
+🔗 **Live Demo:** [https://angelagc92.github.io/afterdark/](https://angelagc92.github.io/afterdark/)
 
 ---
 
