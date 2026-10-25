@@ -1,0 +1,43 @@
+/* Oculta la barra de desplazamiento de los carruseles */
+.scrollbar-hidden {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}
+
+/* Flechas: ocultas hasta que el cursor entra en la zona correspondiente */
+.carousel-arrow {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease, visibility 180ms ease;
+}
+
+.carousel-arrow.is-visible {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.carousel-arrow:focus-visible {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    outline: 2px solid #DAC7FF;
+    outline-offset: -3px;
+}
+
+/* Degradados: visibles solo si queda contenido por ver en ese lado */
+.carousel-fade {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 180ms ease, visibility 180ms ease;
+}
+
+.carousel-fade.is-visible {
+    visibility: visible;
+    opacity: 1;
+}

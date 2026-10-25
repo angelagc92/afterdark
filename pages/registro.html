@@ -1,78 +1,141 @@
 <!doctype html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Crea tu cuenta | Afterdark</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: { noche: '#10071b', lila: '#c9afe8' },
-                    fontFamily: { serif: ['Literata', 'Georgia', 'serif'] },
-                },
-            },
-        }
-    </script>
-    <script src="../js/main.js" defer></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Crea tu cuenta | Afterdark</title>
 
-<body class="relative flex min-h-screen items-center justify-center overflow-hidden bg-noche bg-[url('../assets/img/bg.png')] bg-cover bg-[position:50%_30%] px-4 font-serif text-white">
-    <div class="pointer-events-none fixed inset-0 bg-noche/30"></div>
+        <script src="https://cdn.tailwindcss.com"></script>
 
-    <a href="../index.html" class="absolute left-4 top-4 z-10 sm:left-10 sm:top-6">
-        <img src="../assets/img/logo.png" alt="Afterdark" class="h-14 w-auto sm:h-16">
-    </a>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <main class="relative z-10 w-full max-w-[390px] rounded-3xl bg-[#2a1745]/75 px-7 py-8 backdrop-blur-m sm:px-10">
-        <h1 class="mb-8 text-center text-3xl">Crea tu cuenta</h1>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            noche: '#0F061E',
+                            violeta: '#7151A9',
+                            lila: '#DAC7FF',
+                            luna: '#F4EFFA'
+                        },
+                        fontFamily: {
+                            serif: ['Literata', 'Georgia', 'serif']
+                        }
+                    }
+                }
+            }
+        </script>
 
-        <form action="#" method="post" class="flex flex-col">
+        <script src="../js/main.js" defer></script>
+    </head>
 
-            <label for="username" class="mb-1 text-sm">Nombre de usuario</label>
-            <div class="mb-3 flex items-center gap-3 rounded-xl bg-[#7650b0] px-3 py-2.5">
-                <img src="../assets/icons/user.svg" alt="" class="h-6 w-6 invert">
-                <input id="username" name="username" type="text" placeholder="Elige un nombre de usuario" required
-                    class="w-full min-w-0 bg-transparent font-sans text-sm text-white outline-none placeholder:text-white">
-            </div>
+    <body
+        class="relative flex min-h-screen flex-col overflow-x-hidden bg-noche bg-[url('../assets/img/bg.png')] bg-cover bg-[position:50%_30%] px-4 font-serif text-luna">
 
-            <label for="email" class="mb-1 text-sm">Correo electrónico</label>
-            <div class="mb-3 flex items-center gap-3 rounded-xl bg-[#7650b0] px-3 py-2.5">
-                <img src="../assets/icons/mail.svg" alt="" class="h-6 w-6 invert">
-                <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required
-                    class="w-full min-w-0 bg-transparent font-sans text-sm text-white outline-none placeholder:text-white">
-            </div>
+        <!-- Cabecera -->
+        <header class="relative z-10 w-full shrink-0 pt-3 sm:pt-4">
+            <a href="../index.html" class="inline-block">
+                <img src="../assets/img/logo.png" alt="Afterdark" class="h-10 w-auto sm:h-12">
+            </a>
+        </header>
 
-            <label for="password" class="mb-1 text-sm">Contraseña</label>
-            <div class="mb-3 flex items-center gap-3 rounded-xl bg-[#7650b0] px-3 py-2.5">
-                <img src="../assets/icons/lock.svg" alt="" class="h-6 w-6 invert">
-                <input id="password" name="password" type="password" placeholder="Mínimo 8 caracteres" minlength="8" required
-                    class="w-full min-w-0 bg-transparent font-sans text-sm text-white outline-none placeholder:text-white">
-                <button type="button" data-toggle-password="password" aria-label="Mostrar contraseña">
-                    <img src="../assets/icons/eye.svg" alt="" class="h-6 w-6 invert">
-                </button>
-            </div>
+        <!-- Contenido principal -->
+        <main class="relative z-10 flex w-full flex-1 items-center justify-center py-1">
 
-            <label for="confirm" class="mb-1 text-sm">Confirmar contraseña</label>
-            <div class="flex items-center gap-3 rounded-xl bg-[#7650b0] px-3 py-2.5">
-                <img src="../assets/icons/lock.svg" alt="" class="h-6 w-6 invert">
-                <input id="confirm" name="confirm" type="password" placeholder="Repite tu contraseña" required
-                    class="w-full min-w-0 bg-transparent font-sans text-sm text-white outline-none placeholder:text-white">
-                <button type="button" data-toggle-password="confirm" aria-label="Mostrar contraseña">
-                    <img src="../assets/icons/eye.svg" alt="" class="h-6 w-6 invert">
-                </button>
-            </div>
+            <!-- Tarjeta de registro -->
+            <section
+                class="my-auto w-full max-w-[390px] rounded-3xl bg-noche/75 px-7 py-5 backdrop-blur-sm sm:px-9 sm:py-6">
 
-            <button type="submit" class="mt-8 rounded-full bg-[#d9c8ff] py-2 text-lg text-noche hover:bg-white">Crear cuenta</button>
-        </form>
+                <h1 class="mb-5 text-center text-2xl sm:text-3xl text-luna">
+                    Crea tu cuenta
+                </h1>
 
-        <p class="mt-8 text-center text-sm">¿Ya tienes cuenta? <a href="login.html" class="font-semibold hover:underline">Iniciar sesión</a></p>
-    </main>
-</body>
+                <form action="#" method="post" class="flex flex-col">
+
+                    <!-- Nombre de usuario -->
+                    <label for="username" class="mb-1 text-sm text-luna">
+                        Nombre de usuario
+                    </label>
+
+                    <div class="mb-2.5 flex items-center gap-3 rounded-xl bg-violeta px-3 py-2">
+                        <img src="../assets/icons/user.svg" alt="" class="h-6 w-6 shrink-0 ">
+
+                        <input id="username" name="username" type="text" placeholder="Elige un nombre de usuario"
+                            autocomplete="username" required
+                            class="w-full min-w-0 bg-transparent font-sans text-sm text-luna outline-none placeholder:text-luna/60">
+                    </div>
+
+                    <!-- Correo electrónico -->
+                    <label for="email" class="mb-1 text-sm text-luna">
+                        Correo electrónico
+                    </label>
+
+                    <div class="mb-2.5 flex items-center gap-3 rounded-xl bg-violeta px-3 py-2">
+                        <img src="../assets/icons/mail.svg" alt="" class="h-6 w-6 shrink-0 ">
+
+                        <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com"
+                            autocomplete="email" required
+                            class="w-full min-w-0 bg-transparent font-sans text-sm text-luna outline-none placeholder:text-luna/60">
+                    </div>
+
+                    <!-- Contraseña -->
+                    <label for="password" class="mb-1 text-sm text-luna">
+                        Contraseña
+                    </label>
+
+                    <div class="mb-2.5 flex items-center gap-3 rounded-xl bg-violeta px-3 py-2">
+                        <img src="../assets/icons/lock.svg" alt="" class="h-6 w-6 shrink-0 ">
+
+                        <input id="password" name="password" type="password" placeholder="Mínimo 8 caracteres"
+                            autocomplete="new-password" minlength="8" required
+                            class="w-full min-w-0 bg-transparent font-sans text-sm text-luna outline-none placeholder:text-luna/60">
+
+                        <button type="button" data-toggle-password="password" aria-label="Mostrar contraseña"
+                            class="shrink-0">
+                            <img src="../assets/icons/eye.svg" alt="" class="h-6 w-6 ">
+                        </button>
+                    </div>
+
+                    <!-- Confirmar contraseña -->
+                    <label for="confirm" class="mb-1 text-sm text-luna">
+                        Confirmar contraseña
+                    </label>
+
+                    <div class="flex items-center gap-3 rounded-xl bg-violeta px-3 py-2">
+                        <img src="../assets/icons/lock.svg" alt="" class="h-6 w-6 shrink-0 ">
+
+                        <input id="confirm" name="confirm" type="password" placeholder="Repite tu contraseña"
+                            autocomplete="new-password" required
+                            class="w-full min-w-0 bg-transparent font-sans text-sm text-luna outline-none placeholder:text-luna/60">
+
+                        <button type="button" data-toggle-password="confirm" aria-label="Mostrar contraseña"
+                            class="shrink-0">
+                            <img src="../assets/icons/eye.svg" alt="" class="h-6 w-6 ">
+                        </button>
+                    </div>
+
+                    <!-- Crear cuenta -->
+                    <button type="submit"
+                        class="mt-5 min-h-11 rounded-full bg-lila px-4 py-2 text-lg text-noche hover:bg-luna">
+                        Crear cuenta
+                    </button>
+
+                </form>
+
+                <!-- Enlace al login -->
+                <p class="mt-5 text-center text-sm text-luna">
+                    ¿Ya tienes cuenta?
+                    <a href="login.html" class="font-semibold hover:underline">
+                        Iniciar sesión
+                    </a>
+                </p>
+
+            </section>
+        </main>
+    </body>
 
 </html>

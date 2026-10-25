@@ -6,41 +6,42 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>Afterdark | Inicio</title>
 
-        <!-- Tailwind por CDN: no hace falta instalar nada -->
         <script src="https://cdn.tailwindcss.com"></script>
-        <!-- Fuente serif provisional (cámbiala por la de tu Figma cuando me digas cuál es) -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600&display=swap" rel="stylesheet">
 
-        <!-- Aquí definimos nuestros colores y la fuente para usarlos como clases: bg-noche, text-lila, font-serif... -->
         <script>
             tailwind.config = {
                 theme: {
                     extend: {
                         colors: {
-                            noche: '#10071b',   // fondo más oscuro (header, footer)
-                            violeta: '#9b72cf', // tarjetas de género / acentos
-                            lila: '#c9afe8',    // tarjetas de libros (placeholder)
+                            noche: '#0F061E',
+                            violeta: '#7151A9',
+                            lila: '#DAC7FF',
+                            luna: '#F4EFFA'
                         },
                         fontFamily: { serif: ['Literata', 'Georgia', 'serif'] },
                     },
                 },
             }
         </script>
+
+        <link rel="stylesheet" href="style.css">
+
         <script src="js/main.js" defer></script>
     </head>
 
-    <body class="min-h-screen bg-noche font-serif text-white">
+    <body class="min-h-screen bg-noche font-serif text-luna">
 
-        <!-- ============ CABECERA ============ -->
+        <!-- CABECERA -->
         <header class="flex flex-wrap items-center gap-x-3 gap-y-2 bg-noche px-4 py-3 sm:gap-x-6 sm:px-6">
             <a href="index.html" class="shrink-0">
                 <img src="assets/img/logo.png" alt="Afterdark" class="h-10 w-auto sm:h-12">
             </a>
 
             <nav
-                class="order-last flex w-full justify-between text-sm text-white/90 sm:order-none sm:w-auto sm:justify-start sm:gap-5 sm:text-base">
+                class="order-last flex w-full justify-between text-base text-luna/90 sm:order-none sm:w-auto sm:justify-start sm:gap-5 sm:text-base">
                 <a href="index.html" class="hover:text-lila">Inicio</a>
                 <a href="#explorar" class="hover:text-lila">Explorar</a>
                 <a href="#generos" class="hover:text-lila">Géneros</a>
@@ -49,25 +50,25 @@
 
             <!-- Buscador (todavía no busca nada: se conectará con la base de datos) -->
             <form id="search-form"
-                class="ml-auto flex w-32 items-center gap-2 rounded-full bg-[#7650b0] px-3 py-1 sm:w-48">
-                <img src="assets/icons/search.svg" alt="" class="h-4 w-4 shrink-0 invert" >
+                class="ml-auto flex w-32 items-center gap-2 rounded-full bg-violeta px-3 py-1 sm:w-48">
+                <img src="assets/icons/search.svg" alt="" class="h-4 w-4 shrink-0 ">
                 <input type="search" placeholder="Buscar libros, autores..." aria-label="Buscar libros"
-                    class="w-full min-w-0 bg-transparent text-xs text-white outline-none placeholder:text-white/80">
+                    class="w-full min-w-0 bg-transparent text-xs text-luna outline-none placeholder:text-luna/60">
             </form>
 
-            <!-- Iconos: los SVG son negros, la clase "invert" los vuelve blancos -->
+            <!-- Iconos de favoritos y usuario -->
             <div class="flex items-center gap-3">
                 <a href="#favoritos" aria-label="Favoritos"><img src="assets/icons/book-heart.svg" alt=""
-                        class="h-6 w-6 invert"></a>
+                        class="h-6 w-6 "></a>
                 <a href="./pages/login.html" aria-label="Perfil"><img src="assets/icons/circle-user-round.svg" alt=""
-                        class="h-6 w-6 invert"></a>
+                        class="h-6 w-6 "></a>
             </div>
         </header>
 
-        <!-- ============ CONTENIDO ============ -->
+        <!-- CONTENIDO -->
         <!-- La ilustración va de fondo en todo <main>; el degradado la oscurece poco a poco hacia abajo -->
         <main class="relative bg-[url('assets/img/scrollable_bg.png')] bg-cover bg-top bg-no-repeat">
-            <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-noche/10 via-noche/60 to-noche">
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-noche/10 via-noche/50 to-noche">
             </div>
 
             <div class="relative">
@@ -77,109 +78,289 @@
                     <!-- Futuras noticias: se mostrarán aquí -->
                 </section>
 
-                <!-- ---- NOVEDADES ---- -->
+                <!-- NOVEDADES -->
                 <section id="novedades" class="mt-6 pl-4 sm:pl-6">
-                    <h2 class="mb-2 text-sm text-white">Novedades</h2>
+                    <h2 class="mb-2 text-lg text-luna">Novedades</h2>
 
-                    <!-- Carrusel: overflow-hidden corta lo que no cabe; el degradado de la derecha lo oscurece -->
-                    <div class="relative overflow-hidden">
-                        <div class="flex gap-2 sm:gap-3">
-                            <!-- Futura tarjeta de libro: los datos y la portada vendrán de PHP/MySQL.
-                             Para añadir más, copia y pega un <article>. -->
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila sm:w-[24vw]"></article>
+                    <div data-carousel class="carousel-container relative">
+                        <button type="button" data-carousel-prev="novedades-carousel"
+                            aria-label="Ver novedades anteriores"
+                            class="carousel-arrow carousel-arrow-prev absolute inset-y-0 left-0 z-10 flex w-10 items-center justify-center bg-noche/60">
+                            <img src="assets/icons/left.svg" alt="" class="h-6 w-6">
+                        </button>
+
+                        <div id="novedades-carousel"
+                            class="carousel-track flex gap-2 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hidden sm:gap-3">
+
+                            <article class="aspect-[7/4] w-[42vw] shrink-0
+                           rounded-lg bg-lila/30 backdrop-blur-sm/30 backdrop-blur-sm sm:w-[24vw]"></article>
+
+                            <article class="aspect-[7/4] w-[42vw] shrink-0
+                           rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+
+                            <article class="aspect-[7/4] w-[42vw] shrink-0
+                           rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+
+                            <article class="aspect-[7/4] w-[42vw] shrink-0
+                           rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+
+                            <article class="aspect-[7/4] w-[42vw] shrink-0
+                           rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+
+                            <article class="aspect-[7/4] w-[42vw] shrink-0
+                           rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+
+                            <article class="aspect-[7/4] w-[42vw] shrink-0
+                           rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+
+                            <article class="aspect-[7/4] w-[42vw] shrink-0
+                           rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+
+                            <article class="aspect-[7/4] w-[42vw] shrink-0
+                           rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+
                         </div>
-                        <!-- Extremo oscurecido: sugiere que hay más contenido -->
-                        <div
-                            class="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24">
-                        </div>
+
+                        <div data-carousel-fade="left" class="carousel-fade carousel-fade-left pointer-events-none absolute inset-y-0 left-0 z-[5] w-14 bg-gradient-to-r from-noche/80 to-transparent sm:w-24"></div>
+                        <div data-carousel-fade="right" class="carousel-fade carousel-fade-right pointer-events-none absolute inset-y-0 right-0 z-[5] w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24"></div>
+
+                        <button type="button" data-carousel-next="novedades-carousel" aria-label="Ver más novedades"
+                            class="carousel-arrow carousel-arrow-next absolute inset-y-0 right-0 z-10 flex w-10 items-center justify-center bg-noche/60">
+                            <img src="assets/icons/right.svg" alt="" class="h-6 w-6">
+                        </button>
                     </div>
                 </section>
 
-                <!-- ---- GÉNEROS ---- -->
+
+
+                <!-- GÉNEROS -->
                 <section id="generos" class="mt-6 pl-4 sm:pl-6">
-                    <h2 class="mb-2 text-sm text-white">Géneros</h2>
+                    <h2 class="mb-2 text-lg text-luna">Géneros</h2>
 
-                    <div class="relative overflow-hidden">
-                        <div class="flex gap-2 sm:gap-3">
+                    <div data-carousel class="carousel-container relative">
 
+                        <!-- Flecha izquierda -->
+                        <button type="button" data-carousel-prev="generos-carousel" aria-label="Ver géneros anteriores"
+                            class="carousel-arrow carousel-arrow-prev absolute inset-y-0 left-0 z-10 flex w-10 items-center justify-center bg-noche/60">
+                            <img src="assets/icons/left.svg" alt="" class="h-6 w-6">
+                        </button>
+
+                        <!-- Carrusel de géneros -->
+                        <div id="generos-carousel"
+                            class="carousel-track flex gap-2 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hidden sm:gap-3">
+
+                            <!-- Fantasía -->
                             <a href="#"
-                                class="relative aspect-[8/3] w-[42vw] shrink-0 overflow-hidden rounded-lg sm:w-[16vw]">
+                                class="group relative aspect-[2/1] w-[42vw] shrink-0 overflow-hidden rounded-lg border border-luna/40 sm:w-[16vw]">
                                 <img src="assets/img/fantasia.png" alt=""
-                                    class="absolute inset-0 h-full w-full object-cover">
-                                <span class="absolute inset-0 bg-noche/40"></span>
+                                    class="absolute inset-0 h-full w-full object-cover transition duration-500 ease-out group-hover:scale-105 group-hover:brightness-125">
+
+                                <div
+                                    class="absolute inset-0 flex items-end justify-between bg-gradient-to-t from-black/35 via-transparent to-transparent p-4">
+                                    <span
+                                        class="font-serif text-base text-luna/90 transition duration-300 group-hover:text-luna">
+                                        Fantasía
+                                    </span>
+                                </div>
                             </a>
 
+                            <!-- Romance -->
                             <a href="#"
-                                class="relative aspect-[8/3] w-[42vw] shrink-0 overflow-hidden rounded-lg sm:w-[16vw]">
-                                <img src="assets/img/fantasia.png" alt=""
-                                    class="absolute inset-0 h-full w-full object-cover">
-                                <span class="absolute inset-0 bg-noche/40"></span>
-                            
+                                class="group relative aspect-[2/1] w-[42vw] shrink-0 overflow-hidden rounded-lg border border-luna/40 sm:w-[16vw]">
+                                <img src="assets/img/romance.png" alt=""
+                                    class="absolute inset-0 h-full w-full object-cover transition duration-500 ease-out group-hover:scale-105 group-hover:brightness-125">
+
+                                <div
+                                    class="absolute inset-0 flex items-end justify-between bg-gradient-to-t from-black/35 via-transparent to-transparent p-4">
+                                    <span
+                                        class="font-serif text-base text-luna/90 transition duration-300 group-hover:text-luna">
+                                        Romance
+                                    </span>
+                                </div>
                             </a>
 
+                            <!-- Ciencia ficción -->
                             <a href="#"
-                                class="relative aspect-[8/3] w-[42vw] shrink-0 overflow-hidden rounded-lg sm:w-[16vw]">
-                                <img src="assets/img/fantasia.png" alt=""
-                                    class="absolute inset-0 h-full w-full object-cover">
-                                <span class="absolute inset-0 bg-noche/40"></span>
+                                class="group relative aspect-[2/1] w-[42vw] shrink-0 overflow-hidden rounded-lg border border-luna/40 sm:w-[16vw]">
+                                <img src="assets/img/cienciaficcion.png" alt=""
+                                    class="absolute inset-0 h-full w-full object-cover transition duration-500 ease-out group-hover:scale-105 group-hover:brightness-125">
+
+                                <div
+                                    class="absolute inset-0 flex items-end justify-between bg-gradient-to-t from-black/35 via-transparent to-transparent p-4">
+                                    <span
+                                        class="font-serif text-base text-luna/90 transition duration-300 group-hover:text-luna">
+                                        Ciencia-Ficción
+                                    </span>
+                                </div>
                             </a>
 
+                            <!-- Thriller -->
                             <a href="#"
-                                class="relative aspect-[8/3] w-[42vw] shrink-0 overflow-hidden rounded-lg sm:w-[16vw]">
-                                <img src="assets/img/fantasia.png" alt=""
-                                    class="absolute inset-0 h-full w-full object-cover">
-                                <span class="absolute inset-0 bg-noche/40"></span>            
+                                class="group relative aspect-[2/1] w-[42vw] shrink-0 overflow-hidden rounded-lg border border-luna/40 sm:w-[16vw]">
+                                <img src="assets/img/thriller.png" alt=""
+                                    class="absolute inset-0 h-full w-full object-cover transition duration-500 ease-out group-hover:scale-105 group-hover:brightness-125">
+
+                                <div
+                                    class="absolute inset-0 flex items-end justify-between bg-gradient-to-t from-black/35 via-transparent to-transparent p-4">
+                                    <span
+                                        class="font-serif text-base text-luna/90 transition duration-300 group-hover:text-luna">
+                                        Thriller
+                                    </span>
+                                </div>
                             </a>
 
+                            <!-- Clásicos -->
                             <a href="#"
-                                class="relative aspect-[8/3] w-[42vw] shrink-0 overflow-hidden rounded-lg sm:w-[16vw]">
-                                <img src="assets/img/fantasia.png" alt=""
-                                    class="absolute inset-0 h-full w-full object-cover">
-                                <span class="absolute inset-0 bg-noche/40"></span>
+                                class="group relative aspect-[2/1] w-[42vw] shrink-0 overflow-hidden rounded-lg border border-luna/40 sm:w-[16vw]">
+                                <img src="assets/img/clasicos.png" alt=""
+                                    class="absolute inset-0 h-full w-full object-cover transition duration-500 ease-out group-hover:scale-105 group-hover:brightness-125">
+
+                                <div
+                                    class="absolute inset-0 flex items-end justify-between bg-gradient-to-t from-black/35 via-transparent to-transparent p-4">
+                                    <span
+                                        class="font-serif text-base text-luna/90 transition duration-300 group-hover:text-luna">
+                                        Clásicos
+                                    </span>
+                                </div>
                             </a>
 
+                            <!-- Terror -->
                             <a href="#"
-                                class="relative aspect-[8/3] w-[42vw] shrink-0 overflow-hidden rounded-lg sm:w-[16vw]">
-                                <img src="assets/img/fantasia.png" alt=""
-                                    class="absolute inset-0 h-full w-full object-cover">
-                                <span class="absolute inset-0 bg-noche/50"></span>
+                                class="group relative aspect-[2/1] w-[42vw] shrink-0 overflow-hidden rounded-lg border border-luna/40 sm:w-[16vw]">
+                                <img src="assets/img/terror.png" alt=""
+                                    class="absolute inset-0 h-full w-full object-cover transition duration-500 ease-out group-hover:scale-105 group-hover:brightness-125">
+
+                                <div
+                                    class="absolute inset-0 flex items-end justify-between bg-gradient-to-t from-black/35 via-transparent to-transparent p-4">
+                                    <span
+                                        class="font-serif text-base text-luna/90 transition duration-300 group-hover:text-luna">
+                                        Terror
+                                    </span>
+                                </div>
                             </a>
 
                         </div>
-                        <div
-                            class="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24">
+
+                        <!-- Flecha derecha -->
+                        <button type="button" data-carousel-next="generos-carousel" aria-label="Ver más géneros"
+                            class="carousel-arrow carousel-arrow-next absolute inset-y-0 right-0 z-10 flex w-10 items-center justify-center bg-noche/60">
+                            <img src="assets/icons/right.svg" alt="" class="h-6 w-6">
+                        </button>
+
+                        <!-- Degradado izquierdo -->
+                        <div data-carousel-fade="left"
+                            class="carousel-fade carousel-fade-left pointer-events-none absolute inset-y-0 left-0 z-[5] w-14 bg-gradient-to-r from-noche/80 to-transparent sm:w-24">
                         </div>
+
+                        <!-- Degradado derecho -->
+                        <div data-carousel-fade="right"
+                            class="carousel-fade carousel-fade-right pointer-events-none absolute inset-y-0 right-0 z-[5] w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24">
+                        </div>
+
                     </div>
                 </section>
 
-                <!-- ---- MÁS LEÍDOS ---- -->
-                <section class="mb-8 mt-6 pl-4 sm:pl-6">
-                    <h2 class="mb-2 text-sm text-white">Más leídos</h2>
+                <!-- MÁS LEÍDOS -->
+                <section id="mas-leidos" class="mb-8 mt-6 pl-4 sm:pl-6">
+                    <h2 class="mb-2 text-lg text-luna">Más leídos</h2>
 
-                    <div class="relative overflow-hidden">
-                        <div class="flex gap-2 sm:gap-3">
-                            <!-- Futura tarjeta de libro (más grande que las de Novedades) -->
-                            <article class="aspect-[8/5] w-[62vw] shrink-0 rounded-lg bg-lila sm:w-[31vw]"></article>
-                            <article class="aspect-[8/5] w-[62vw] shrink-0 rounded-lg bg-lila sm:w-[31vw]"></article>
-                            <article class="aspect-[8/5] w-[62vw] shrink-0 rounded-lg bg-lila sm:w-[31vw]"></article>
-                            <article class="aspect-[8/5] w-[62vw] shrink-0 rounded-lg bg-lila sm:w-[31vw]"></article>
-                            <article class="aspect-[8/5] w-[62vw] shrink-0 rounded-lg bg-lila sm:w-[31vw]"></article>
+                    <div data-carousel class="carousel-container relative">
+                        <button type="button" data-carousel-prev="mas-leidos-carousel"
+                            aria-label="Ver libros anteriores"
+                            class="carousel-arrow carousel-arrow-prev absolute inset-y-0 left-0 z-10 flex w-10 items-center justify-center bg-noche/60">
+                            <img src="assets/icons/left.svg" alt="" class="h-6 w-6">
+                        </button>
+
+                        <div id="mas-leidos-carousel"
+                            class="carousel-track flex gap-2 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hidden sm:gap-3">
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
                         </div>
-                        <div
-                            class="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24">
-                        </div>
+
+                        <div data-carousel-fade="left" class="carousel-fade carousel-fade-left pointer-events-none absolute inset-y-0 left-0 z-[5] w-14 bg-gradient-to-r from-noche/80 to-transparent sm:w-24"></div>
+                        <div data-carousel-fade="right" class="carousel-fade carousel-fade-right pointer-events-none absolute inset-y-0 right-0 z-[5] w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24"></div>
+
+                        <button type="button" data-carousel-next="mas-leidos-carousel"
+                            aria-label="Ver más libros"
+                            class="carousel-arrow carousel-arrow-next absolute inset-y-0 right-0 z-10 flex w-10 items-center justify-center bg-noche/60">
+                            <img src="assets/icons/right.svg" alt="" class="h-6 w-6">
+                        </button>
                     </div>
                 </section>
+
+                <!-- FANTASÍA -->
+                <section id="fantasia" class="mb-8 mt-6 pl-4 sm:pl-6">
+                    <h2 class="mb-2 text-lg text-luna">Fantasía</h2>
+
+                    <div data-carousel class="carousel-container relative">
+                        <button type="button" data-carousel-prev="fantasia-carousel"
+                            aria-label="Ver libros anteriores"
+                            class="carousel-arrow carousel-arrow-prev absolute inset-y-0 left-0 z-10 flex w-10 items-center justify-center bg-noche/60">
+                            <img src="assets/icons/left.svg" alt="" class="h-6 w-6">
+                        </button>
+
+                        <div id="fantasia-carousel"
+                            class="carousel-track flex gap-2 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hidden sm:gap-3">
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                        </div>
+
+                        <div data-carousel-fade="left" class="carousel-fade carousel-fade-left pointer-events-none absolute inset-y-0 left-0 z-[5] w-14 bg-gradient-to-r from-noche/80 to-transparent sm:w-24"></div>
+                        <div data-carousel-fade="right" class="carousel-fade carousel-fade-right pointer-events-none absolute inset-y-0 right-0 z-[5] w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24"></div>
+
+                        <button type="button" data-carousel-next="fantasia-carousel"
+                            aria-label="Ver más libros"
+                            class="carousel-arrow carousel-arrow-next absolute inset-y-0 right-0 z-10 flex w-10 items-center justify-center bg-noche/60">
+                            <img src="assets/icons/right.svg" alt="" class="h-6 w-6">
+                        </button>
+                    </div>
+                </section>
+
+                <!-- FANTASÍA -->
+                <section id="romance" class="mb-8 mt-6 pl-4 sm:pl-6">
+                    <h2 class="mb-2 text-lg text-luna">Romance</h2>
+
+                    <div data-carousel class="carousel-container relative">
+                        <button type="button" data-carousel-prev="romance-carousel"
+                            aria-label="Ver libros anteriores"
+                            class="carousel-arrow carousel-arrow-prev absolute inset-y-0 left-0 z-10 flex w-10 items-center justify-center bg-noche/60">
+                            <img src="assets/icons/left.svg" alt="" class="h-6 w-6">
+                        </button>
+
+                        <div id="romance-carousel"
+                            class="carousel-track flex gap-2 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hidden sm:gap-3">
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                        </div>
+
+                        <div data-carousel-fade="left" class="carousel-fade carousel-fade-left pointer-events-none absolute inset-y-0 left-0 z-[5] w-14 bg-gradient-to-r from-noche/80 to-transparent sm:w-24"></div>
+                        <div data-carousel-fade="right" class="carousel-fade carousel-fade-right pointer-events-none absolute inset-y-0 right-0 z-[5] w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24"></div>
+
+                        <button type="button" data-carousel-next="romance-carousel"
+                            aria-label="Ver más libros"
+                            class="carousel-arrow carousel-arrow-next absolute inset-y-0 right-0 z-10 flex w-10 items-center justify-center bg-noche/60">
+                            <img src="assets/icons/right.svg" alt="" class="h-6 w-6">
+                        </button>
+                    </div>
+                </section>
+
 
             </div>
         </main>
 
-        <!-- ============ PIE ============ -->
+        <!-- PIE -->
         <footer class="bg-noche px-4 py-5 sm:px-6">
             <a href="index.html"><img src="assets/img/logo_book.png" alt="Afterdark" class="h-10 w-auto"></a>
         </footer>
