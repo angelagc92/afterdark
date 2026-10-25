@@ -32,7 +32,7 @@
         <script src="js/main.js" defer></script>
     </head>
 
-    <body class="min-h-screen bg-noche font-serif text-luna">
+    <body id="top" class="min-h-screen bg-noche font-serif text-luna">
 
         <!-- CABECERA -->
         <header class="flex flex-wrap items-center gap-x-3 gap-y-2 bg-noche px-4 py-3 sm:gap-x-6 sm:px-6">
@@ -59,9 +59,9 @@
             <!-- Iconos de favoritos y usuario -->
             <div class="flex items-center gap-3">
                 <a href="#favoritos" aria-label="Favoritos"><img src="assets/icons/book-heart.svg" alt=""
-                        class="h-6 w-6 "></a>
+                        class="h-8 w-8 "></a>
                 <a href="./pages/login.html" aria-label="Perfil"><img src="assets/icons/circle-user-round.svg" alt=""
-                        class="h-6 w-6 "></a>
+                        class="h-8 w-8 "></a>
             </div>
         </header>
 
@@ -121,8 +121,12 @@
 
                         </div>
 
-                        <div data-carousel-fade="left" class="carousel-fade carousel-fade-left pointer-events-none absolute inset-y-0 left-0 z-[5] w-14 bg-gradient-to-r from-noche/80 to-transparent sm:w-24"></div>
-                        <div data-carousel-fade="right" class="carousel-fade carousel-fade-right pointer-events-none absolute inset-y-0 right-0 z-[5] w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24"></div>
+                        <div data-carousel-fade="left"
+                            class="carousel-fade carousel-fade-left pointer-events-none absolute inset-y-0 left-0 z-[5] w-14 bg-gradient-to-r from-noche/80 to-transparent sm:w-24">
+                        </div>
+                        <div data-carousel-fade="right"
+                            class="carousel-fade carousel-fade-right pointer-events-none absolute inset-y-0 right-0 z-[5] w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24">
+                        </div>
 
                         <button type="button" data-carousel-next="novedades-carousel" aria-label="Ver más novedades"
                             class="carousel-arrow carousel-arrow-next absolute inset-y-0 right-0 z-10 flex w-10 items-center justify-center bg-noche/60">
@@ -273,19 +277,34 @@
 
                         <div id="mas-leidos-carousel"
                             class="carousel-track flex gap-2 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hidden sm:gap-3">
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
                         </div>
 
-                        <div data-carousel-fade="left" class="carousel-fade carousel-fade-left pointer-events-none absolute inset-y-0 left-0 z-[5] w-14 bg-gradient-to-r from-noche/80 to-transparent sm:w-24"></div>
-                        <div data-carousel-fade="right" class="carousel-fade carousel-fade-right pointer-events-none absolute inset-y-0 right-0 z-[5] w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24"></div>
+                        <div data-carousel-fade="left"
+                            class="carousel-fade carousel-fade-left pointer-events-none absolute inset-y-0 left-0 z-[5] w-14 bg-gradient-to-r from-noche/80 to-transparent sm:w-24">
+                        </div>
+                        <div data-carousel-fade="right"
+                            class="carousel-fade carousel-fade-right pointer-events-none absolute inset-y-0 right-0 z-[5] w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24">
+                        </div>
 
-                        <button type="button" data-carousel-next="mas-leidos-carousel"
-                            aria-label="Ver más libros"
+                        <button type="button" data-carousel-next="mas-leidos-carousel" aria-label="Ver más libros"
                             class="carousel-arrow carousel-arrow-next absolute inset-y-0 right-0 z-10 flex w-10 items-center justify-center bg-noche/60">
                             <img src="assets/icons/right.svg" alt="" class="h-6 w-6">
                         </button>
@@ -297,27 +316,41 @@
                     <h2 class="mb-2 text-lg text-luna">Fantasía</h2>
 
                     <div data-carousel class="carousel-container relative">
-                        <button type="button" data-carousel-prev="fantasia-carousel"
-                            aria-label="Ver libros anteriores"
+                        <button type="button" data-carousel-prev="fantasia-carousel" aria-label="Ver libros anteriores"
                             class="carousel-arrow carousel-arrow-prev absolute inset-y-0 left-0 z-10 flex w-10 items-center justify-center bg-noche/60">
                             <img src="assets/icons/left.svg" alt="" class="h-6 w-6">
                         </button>
 
                         <div id="fantasia-carousel"
                             class="carousel-track flex gap-2 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hidden sm:gap-3">
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
                         </div>
 
-                        <div data-carousel-fade="left" class="carousel-fade carousel-fade-left pointer-events-none absolute inset-y-0 left-0 z-[5] w-14 bg-gradient-to-r from-noche/80 to-transparent sm:w-24"></div>
-                        <div data-carousel-fade="right" class="carousel-fade carousel-fade-right pointer-events-none absolute inset-y-0 right-0 z-[5] w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24"></div>
+                        <div data-carousel-fade="left"
+                            class="carousel-fade carousel-fade-left pointer-events-none absolute inset-y-0 left-0 z-[5] w-14 bg-gradient-to-r from-noche/80 to-transparent sm:w-24">
+                        </div>
+                        <div data-carousel-fade="right"
+                            class="carousel-fade carousel-fade-right pointer-events-none absolute inset-y-0 right-0 z-[5] w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24">
+                        </div>
 
-                        <button type="button" data-carousel-next="fantasia-carousel"
-                            aria-label="Ver más libros"
+                        <button type="button" data-carousel-next="fantasia-carousel" aria-label="Ver más libros"
                             class="carousel-arrow carousel-arrow-next absolute inset-y-0 right-0 z-10 flex w-10 items-center justify-center bg-noche/60">
                             <img src="assets/icons/right.svg" alt="" class="h-6 w-6">
                         </button>
@@ -329,27 +362,41 @@
                     <h2 class="mb-2 text-lg text-luna">Romance</h2>
 
                     <div data-carousel class="carousel-container relative">
-                        <button type="button" data-carousel-prev="romance-carousel"
-                            aria-label="Ver libros anteriores"
+                        <button type="button" data-carousel-prev="romance-carousel" aria-label="Ver libros anteriores"
                             class="carousel-arrow carousel-arrow-prev absolute inset-y-0 left-0 z-10 flex w-10 items-center justify-center bg-noche/60">
                             <img src="assets/icons/left.svg" alt="" class="h-6 w-6">
                         </button>
 
                         <div id="romance-carousel"
                             class="carousel-track flex gap-2 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hidden sm:gap-3">
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
-                            <article class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]"></article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
+                            <article
+                                class="aspect-[7/4] w-[42vw] shrink-0 rounded-lg bg-lila/30 backdrop-blur-sm sm:w-[24vw]">
+                            </article>
                         </div>
 
-                        <div data-carousel-fade="left" class="carousel-fade carousel-fade-left pointer-events-none absolute inset-y-0 left-0 z-[5] w-14 bg-gradient-to-r from-noche/80 to-transparent sm:w-24"></div>
-                        <div data-carousel-fade="right" class="carousel-fade carousel-fade-right pointer-events-none absolute inset-y-0 right-0 z-[5] w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24"></div>
+                        <div data-carousel-fade="left"
+                            class="carousel-fade carousel-fade-left pointer-events-none absolute inset-y-0 left-0 z-[5] w-14 bg-gradient-to-r from-noche/80 to-transparent sm:w-24">
+                        </div>
+                        <div data-carousel-fade="right"
+                            class="carousel-fade carousel-fade-right pointer-events-none absolute inset-y-0 right-0 z-[5] w-14 bg-gradient-to-l from-noche/80 to-transparent sm:w-24">
+                        </div>
 
-                        <button type="button" data-carousel-next="romance-carousel"
-                            aria-label="Ver más libros"
+                        <button type="button" data-carousel-next="romance-carousel" aria-label="Ver más libros"
                             class="carousel-arrow carousel-arrow-next absolute inset-y-0 right-0 z-10 flex w-10 items-center justify-center bg-noche/60">
                             <img src="assets/icons/right.svg" alt="" class="h-6 w-6">
                         </button>
@@ -360,10 +407,28 @@
             </div>
         </main>
 
-        <!-- PIE -->
-        <footer class="bg-noche px-4 py-5 sm:px-6">
-            <a href="index.html"><img src="assets/img/logo_book.png" alt="Afterdark" class="h-10 w-auto"></a>
+
+        <!-- FOOTER -->
+        <footer class="mt-4 px-4 pb-2 pt-2 sm:mt-8 sm:pb-6">
+
+            <div class="flex flex-col items-center gap-3">
+
+                <!-- Logo -->
+                <a href="index.html" class="flex shrink-0 items-center gap-1">
+                    <img src="./assets/img/logo_book.png" alt="" class="h-12 w-12 object-contain">
+
+                    <img src="./assets/img/logo2.png" alt="Afterdark" class="h-7 w-auto object-contain">
+                </a>
+
+            </div>
+
+            <!-- Copyright -->
+            <p class="mt-4 text-center text-xs text-luna/40">
+                © 2026 Afterdark
+            </p>
+
         </footer>
+
 
     </body>
 
