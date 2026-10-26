@@ -41,3 +41,52 @@
     visibility: visible;
     opacity: 1;
 }
+
+/* Brillo que recorre el borde de las tarjetas */
+@keyframes border-glow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+.card-glow {
+    position: relative;
+    isolation: isolate;
+}
+
+.card-glow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            #7151A9,
+            #DAC7FF,
+            #7151A9,
+            transparent);
+    background-size: 200% 100%;
+    animation: border-glow 2s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.card-glow:hover::before {
+    opacity: 1;
+}
