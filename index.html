@@ -9,7 +9,8 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Literata:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Literata:wght@200;300;400;500;600&display=swap"
+            rel="stylesheet">
 
         <script>
             tailwind.config = {
@@ -32,10 +33,16 @@
         <script src="js/main.js" defer></script>
     </head>
 
-    <body id="top" class="min-h-screen bg-noche font-serif text-luna">
+    <body id="top" class="relative min-h-screen bg-noche font-serif text-luna">
+
+        <!-- Fondo general de la página -->
+        <div
+            class="pointer-events-none absolute inset-0 -z-10 bg-[url('assets/img/scrollable_bg.png')] bg-cover bg-top bg-no-repeat">
+            <div class="absolute inset-0 bg-gradient-to-b from-noche/20 via-noche/60 to-noche"></div>
+        </div>
 
         <!-- CABECERA -->
-        <header class="flex flex-wrap items-center gap-x-3 gap-y-2 bg-noche px-4 py-3 sm:gap-x-6 sm:px-6">
+        <header class="flex flex-wrap items-center gap-x-3 gap-y-2 bg-noche/60 px-4 py-3 sm:gap-x-6 sm:px-6">
             <a href="index.html" class="shrink-0">
                 <img src="assets/img/logo.png" alt="Afterdark" class="h-10 w-auto sm:h-12">
             </a>
@@ -66,10 +73,7 @@
         </header>
 
         <!-- CONTENIDO -->
-        <!-- La ilustración va de fondo en todo <main>; el degradado la oscurece poco a poco hacia abajo -->
-        <main class="relative bg-[url('assets/img/scrollable_bg.png')] bg-cover bg-top bg-no-repeat">
-            <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-noche/20 via-noche/60 to-noche/80">
-            </div>
+        <main class="relative">
 
             <div class="relative">
 
