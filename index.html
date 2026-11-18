@@ -11,6 +11,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Literata:wght@200;300;400;500;600&display=swap"
             rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
 
         <script>
             tailwind.config = {
@@ -22,7 +24,10 @@
                             lila: '#DAC7FF',
                             luna: '#F4EFFA'
                         },
-                        fontFamily: { serif: ['Literata', 'Georgia', 'serif'] },
+                        fontFamily: {
+                            serif: ['Literata', 'Georgia', 'serif'],
+                            sans: ['DM Sans', 'sans-serif']
+                        },
                     },
                 },
             }
@@ -33,8 +38,7 @@
         <script src="js/main.js" defer></script>
     </head>
 
-    <body id="top" class="relative min-h-screen bg-noche font-serif text-luna">
-
+    <body class="min-h-screen flex flex-col bg-noche font-serif text-luna">
         <!-- Fondo general de la página -->
         <div
             class="pointer-events-none absolute inset-0 -z-10 bg-[url('assets/img/scrollable_bg.webp')] bg-cover bg-top bg-no-repeat">
@@ -49,9 +53,9 @@
 
             <nav
                 class="order-last flex w-full justify-between px-6 pt-3 text-base text-luna/90 sm:order-none sm:ml-4 sm:w-auto sm:justify-start sm:gap-5 sm:px-0 sm:pt-0 sm:text-base">
-                <a href="index.html" class="hover:text-lila">Inicio</a>
-                <a href="#explorar" class="hover:text-lila">Explorar</a>
-                <a href="#novedades" class="hover:text-lila">Novedades</a>
+                <a href="index.html" aria-current="page" class="text-lila">Inicio</a>
+                <a href="./pages/explorar.html" class="transition-colors hover:text-lila">Explorar</a>
+                <a href="./pages/novedades.html" class="transition-colors hover:text-lila">Novedades</a>
             </nav>
 
             <!-- Buscador (todavía no busca nada: se conectará con la base de datos) -->
@@ -72,7 +76,7 @@
         </header>
 
         <!-- CONTENIDO -->
-        <main class="relative">
+        <main class="flex-1">
 
             <div class="relative">
 
@@ -82,74 +86,8 @@
                     <!-- Futuras noticias: se mostrarán aquí -->
                 </section>
 
-                <!-- LIBROS -->
-                <section id="libros" class="mt-6 px-6 sm:px-10 lg:px-14">
 
-                    <div class="grid grid-cols-2 gap-6 mx-5 sm:grid-cols-3 sm:gap-6 md:grid-cols-4 md:gap-6 lg:grid-cols-5 lg:gap-8">
 
-                        <article
-                            class="card-glow aspect-[3/4] rounded-lg bg-lila/30 backdrop-blur-sm transition-all duration-300 ease-out hover:bg-lila/40">
-                        </article>
-
-                        <article
-                            class="card-glow aspect-[3/4] rounded-lg bg-lila/30 backdrop-blur-sm transition-all duration-300 ease-out hover:bg-lila/40">
-                        </article>
-
-                        <article
-                            class="card-glow aspect-[3/4] rounded-lg bg-lila/30 backdrop-blur-sm transition-all duration-300 ease-out hover:bg-lila/40">
-                        </article>
-
-                        <article
-                            class="card-glow aspect-[3/4] rounded-lg bg-lila/30 backdrop-blur-sm transition-all duration-300 ease-out hover:bg-lila/40">
-                        </article>
-
-                        <article
-                            class="card-glow aspect-[3/4] rounded-lg bg-lila/30 backdrop-blur-sm transition-all duration-300 ease-out hover:bg-lila/40">
-                        </article>
-
-                        <article
-                            class="card-glow aspect-[3/4] rounded-lg bg-lila/30 backdrop-blur-sm transition-all duration-300 ease-out hover:bg-lila/40">
-                        </article>
-
-                        <article
-                            class="card-glow aspect-[3/4] rounded-lg bg-lila/30 backdrop-blur-sm transition-all duration-300 ease-out hover:bg-lila/40">
-                        </article>
-
-                        <article
-                            class="card-glow aspect-[3/4] rounded-lg bg-lila/30 backdrop-blur-sm transition-all duration-300 ease-out hover:bg-lila/40">
-                        </article>
-
-                        <article
-                            class="card-glow aspect-[3/4] rounded-lg bg-lila/30 backdrop-blur-sm transition-all duration-300 ease-out hover:bg-lila/40">
-                        </article>
-
-                        <article
-                            class="card-glow aspect-[3/4] rounded-lg bg-lila/30 backdrop-blur-sm transition-all duration-300 ease-out hover:bg-lila/40">
-                        </article>
-
-                        <article
-                            class="card-glow aspect-[3/4] rounded-lg bg-lila/30 backdrop-blur-sm transition-all duration-300 ease-out hover:bg-lila/40">
-                        </article>
-
-                        <article
-                            class="card-glow aspect-[3/4] rounded-lg bg-lila/30 backdrop-blur-sm transition-all duration-300 ease-out hover:bg-lila/40">
-                        </article>
-
-                        <article
-                            class="card-glow aspect-[3/4] rounded-lg bg-lila/30 backdrop-blur-sm transition-all duration-300 ease-out hover:bg-lila/40">
-                        </article>
-
-                        <article
-                            class="card-glow aspect-[3/4] rounded-lg bg-lila/30 backdrop-blur-sm transition-all duration-300 ease-out hover:bg-lila/40">
-                        </article>
-
-                        <article
-                            class="card-glow aspect-[3/4] rounded-lg bg-lila/30 backdrop-blur-sm transition-all duration-300 ease-out hover:bg-lila/40">
-                        </article>
-
-                    </div>
-
-                </section>
 
 
 
@@ -161,26 +99,95 @@
         </main>
 
 
-        <!-- FOOTER -->
+        <!-- FOOTER 
         <footer class="mt-4 px-4 pb-2 pt-2 sm:mt-8 sm:pb-6">
 
             <div class="flex flex-col items-center gap-3">
 
-                <!-- Logo -->
-                <a href="index.html" class="flex shrink-0 items-center gap-1">
-                    <img src="./assets/img/logo_book.png" alt="" class="h-12 w-12 object-contain">
+                <a href="../index.html" class="flex shrink-0 items-center gap-1">
 
-                    <img src="./assets/img/logo2.png" alt="Afterdark" class="h-7 w-auto object-contain">
+                    <img src="../assets/img/logo_book.png" alt="" class="h-12 w-12 object-contain">
+
+                    <img src="../assets/img/logo2.png" alt="Afterdark" class="h-7 w-auto object-contain">
+
                 </a>
 
             </div>
 
-            <!-- Copyright -->
             <p class="mt-4 text-center text-xs text-luna/40">
                 © 2026 Afterdark
             </p>
 
         </footer>
+        -->
+
+        <footer class="px-4 py-6 sm:px-6">
+            <div class="relative mx-auto max-w-7xl overflow-hidden rounded-2xl px-6 py-10 sm:px-10">
+
+                <!-- Línea superior -->
+                <div class="absolute left-8 right-8 top-5 border-t border-violeta/30"></div>
+
+                <!-- Contenido -->
+                <div class="relative z-10 grid grid-cols-2 gap-8 pt-4 md:grid-cols-4 md:items-center">
+
+                    <!-- LOGO -->
+                    <div class="col-span-2 flex justify-center md:col-span-1 md:justify-start">
+                        <a href="../index.html" class="flex items-center">
+                            <img src="../assets/img/logo_book.png" alt="" class="h-12 w-12 object-contain">
+                            <img src="../assets/img/logo2.png" alt="Afterdark" class="h-7 w-auto object-contain">
+                        </a>
+                    </div>
+
+                    <!-- NAVEGACIÓN -->
+                    <div class="flex flex-col items-center gap-2 md:items-start">
+                        <h3 class="mb-1 text-base  text-luna">
+                            Afterdark
+                        </h3>
+
+                        <a href="../index.html"
+                            class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
+                            Inicio
+                        </a>
+
+                        <a href="explorar.html"
+                            class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
+                            Explorar
+                        </a>
+
+                        <a href="novedades.html"
+                            class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
+                            Novedades
+                        </a>
+                    </div>
+
+                    <!-- COMUNIDAD -->
+                    <div class="flex flex-col items-center gap-2 md:items-start">
+                        <h3 class="mb-1 text-base text-luna">
+                            Información
+                        </h3>
+
+                        <a href="#sobre-afterdark"
+                            class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
+                            Sobre el proyecto
+                        </a>
+
+                        <a href="#contacto" class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
+                            Contacto
+                        </a>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <p class="mt-5 text-center text-xs text-luna/40">
+                © 2026 Afterdark
+            </p>
+        </footer>
+
 
 
     </body>
