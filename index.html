@@ -75,9 +75,10 @@
 
             <!-- BUSCADOR -->
             <form id="search-form"
-                class="ml-auto flex w-32 items-center gap-2 rounded-full bg-violeta px-3 py-1 sm:w-48">
+                class="ml-auto flex w-32 items-center gap-2 rounded-full border border-lila/20 bg-violeta/35 px-3 py-1.5 shadow-inner shadow-lila/5 backdrop-blur-md transition-all duration-300 hover:border-lila/40 hover:bg-violeta/50 focus-within:border-lila/50 focus-within:bg-violeta/55 sm:w-48">
 
-                <img src="assets/icons/search.svg" alt="" class="h-4 w-4 shrink-0">
+                <img src="assets/icons/search.svg" alt=""
+                    class="h-4 w-4 shrink-0 opacity-80 transition-opacity duration-300 group-focus-within:opacity-100">
 
                 <input type="search" placeholder="Buscar libros, autores..." aria-label="Buscar libros"
                     class="w-full min-w-0 bg-transparent font-sans text-xs text-luna outline-none placeholder:text-luna/60">
@@ -85,14 +86,20 @@
             </form>
 
             <!-- FAVORITOS Y PERFIL -->
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-1">
 
-                <a href="#favoritos" aria-label="Favoritos">
-                    <img src="assets/icons/book-heart.svg" alt="" class="h-6 w-6">
+                <a href="#favoritos" aria-label="Favoritos"
+                    class="group flex items-center justify-center rounded-full p-2 transition-all duration-300 hover:bg-violeta/25 hover:shadow-[0_0_12px_rgba(218,199,255,0.12)]">
+
+                    <img src="assets/icons/book-heart.svg" alt=""
+                        class="h-7 w-7 opacity-90 transition-all duration-300 group-hover:scale-110 group-hover:opacity-100">
                 </a>
 
-                <a href="./pages/login.html" aria-label="Perfil">
-                    <img src="assets/icons/circle-user-round.svg" alt="" class="h-6 w-6">
+                <a href="./pages/login.html" aria-label="Perfil"
+                    class="group flex items-center justify-center rounded-full p-2 transition-all duration-300 hover:bg-violeta/25 hover:shadow-[0_0_12px_rgba(218,199,255,0.12)]">
+
+                    <img src="assets/icons/circle-user-round.svg" alt=""
+                        class="h-7 w-7 opacity-90 transition-all duration-300 group-hover:scale-110 group-hover:opacity-100">
                 </a>
 
             </div>
