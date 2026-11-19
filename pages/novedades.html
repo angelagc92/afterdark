@@ -82,7 +82,7 @@
                 <input type="search" id="search" name="search" placeholder="Buscar libros, autores..."
                     aria-label="Buscar libros"
                     class="w-full min-w-0 bg-transparent font-sans text-xs text-luna outline-none placeholder:text-luna/60">
-                    
+
             </form>
 
             <!-- FAVORITOS Y PERFIL -->
@@ -161,47 +161,53 @@
 
 
                     <!-- NAVEGACIÓN -->
-                    <div class="flex flex-col items-center gap-2 md:items-start">
+                    <nav aria-label="Navegación del pie de página"
+                        class="col-span-2 grid grid-cols-2 gap-8 md:col-span-2">
 
-                        <p class="mb-1 text-base text-luna">
-                            Afterdark
-                        </p>
+                        <!-- AFTERDARK -->
+                        <div class="flex flex-col items-center gap-2 md:items-start">
 
-                        <a href="../index.html"
-                            class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
-                            Inicio
-                        </a>
+                            <p class="mb-1 text-base text-luna">
+                                Afterdark
+                            </p>
 
-                        <a href="./explorar.html"
-                            class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
-                            Explorar
-                        </a>
+                            <a href="index.html"
+                                class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
+                                Inicio
+                            </a>
 
-                        <a href="./novedades.html"
-                            class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
-                            Novedades
-                        </a>
+                            <a href="./pages/explorar.html"
+                                class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
+                                Explorar
+                            </a>
 
-                    </div>
+                            <a href="./pages/novedades.html"
+                                class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
+                                Novedades
+                            </a>
 
+                        </div>
 
-                    <!-- INFORMACIÓN -->
-                    <div class="flex flex-col items-center gap-2 md:items-start">
+                        <!-- INFORMACIÓN -->
+                        <div class="flex flex-col items-center gap-2 md:items-start">
 
-                        <p class="mb-1 text-base text-luna">
-                            Información
-                        </p>
+                            <p class="mb-1 text-base text-luna">
+                                Información
+                            </p>
 
-                        <a href="#sobre-afterdark"
-                            class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
-                            Sobre el proyecto
-                        </a>
+                            <a href="#sobre-afterdark"
+                                class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
+                                Sobre el proyecto
+                            </a>
 
-                        <a href="#contacto" class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
-                            Contacto
-                        </a>
+                            <a href="#contacto"
+                                class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
+                                Contacto
+                            </a>
 
-                    </div>
+                        </div>
+
+                    </nav>
 
                 </div>
 
