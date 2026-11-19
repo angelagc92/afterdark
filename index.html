@@ -243,74 +243,72 @@
 
 
         <!-- FOOTER -->
-        <footer class="px-4 py-6 sm:px-6">
+        <footer class="px-6 py-10 sm:px-10 md:px-12">
 
-            <div class="relative mx-auto max-w-7xl overflow-hidden rounded-2xl px-6 py-8 sm:px-10">
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-10">
 
-                <!-- LÍNEA SUPERIOR -->
-                <div class="absolute left-8 right-8 top-5 border-t border-violeta/30"></div>
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="flex flex-col items-center text-center sm:items-start sm:text-left">
 
-                <!-- CONTENIDO -->
-                <div class="relative z-10 grid grid-cols-2 gap-8 pt-4 md:grid-cols-3 md:items-center">
+                    <a href="index.html" aria-label="Afterdark - Inicio"
+                        class="transition-opacity duration-300 hover:opacity-80">
 
-                    <!-- LOGO -->
-                    <div class="col-span-2 flex justify-center md:col-span-1 md:justify-start">
+                        <img src="assets/img/logo.png" alt="Afterdark" class="h-10 w-auto object-contain">
 
-                        <a href="index.html" class="flex items-center">
-                            <img src="assets/img/logo_book.png" alt="" class="h-12 w-12 object-contain">
+                    </a>
 
-                            <img src="assets/img/logo2.png" alt="Afterdark" class="h-7 w-auto object-contain">
+                    <p class="mt-4 max-w-xs font-sans text-sm leading-relaxed text-luna/65">
+                        Una biblioteca digital para perderse entre historias.
+                    </p>
+
+                </div>
+
+                <!-- NAVEGACIÓN -->
+                <div class="text-center sm:text-left">
+
+                    <p class="mb-4 font-serif text-lg text-luna">
+                        Afterdark
+                    </p>
+
+                    <nav aria-label="Navegación del pie de página"
+                        class="flex flex-col items-center gap-3 sm:items-start">
+
+                        <a href="index.html" class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
+                            Inicio
                         </a>
 
-                    </div>
+                        <a href="pages/explorar.html"
+                            class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
+                            Explorar
+                        </a>
 
+                        <a href="pages/novedades.html"
+                            class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
+                            Novedades
+                        </a>
 
-                    <!-- NAVEGACIÓN -->
-                    <nav aria-label="Navegación del pie de página"
-                        class="col-span-2 grid grid-cols-2 gap-8 md:col-span-2">
+                    </nav>
 
-                        <!-- AFTERDARK -->
-                        <div class="flex flex-col items-center gap-2 md:items-start">
+                </div>
 
-                            <p class="mb-1 text-base text-luna">
-                                Afterdark
-                            </p>
+                <!-- INFORMACIÓN -->
+                <div class="text-center sm:text-left">
 
-                            <a href="index.html"
-                                class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
-                                Inicio
-                            </a>
+                    <p class="mb-4 font-serif text-lg text-luna">
+                        Información
+                    </p>
 
-                            <a href="./pages/explorar.html"
-                                class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
-                                Explorar
-                            </a>
+                    <nav aria-label="Información del pie de página"
+                        class="flex flex-col items-center gap-3 sm:items-start">
 
-                            <a href="./pages/novedades.html"
-                                class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
-                                Novedades
-                            </a>
+                        <a href="#sobre-afterdark"
+                            class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
+                            Sobre el proyecto
+                        </a>
 
-                        </div>
-
-                        <!-- INFORMACIÓN -->
-                        <div class="flex flex-col items-center gap-2 md:items-start">
-
-                            <p class="mb-1 text-base text-luna">
-                                Información
-                            </p>
-
-                            <a href="#sobre-afterdark"
-                                class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
-                                Sobre el proyecto
-                            </a>
-
-                            <a href="#contacto"
-                                class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
-                                Contacto
-                            </a>
-
-                        </div>
+                        <a href="#contacto" class="font-sans text-sm text-luna/75 transition-colors hover:text-lila">
+                            Contacto
+                        </a>
 
                     </nav>
 
@@ -318,13 +316,17 @@
 
             </div>
 
-
             <!-- COPYRIGHT -->
-            <p class="mt-5 text-center font-sans text-xs text-luna/75">
-                © 2026 Afterdark
-            </p>
+            <div class="mt-10 border-t border-violeta/30 pt-5 text-center">
+
+                <p class="font-sans text-xs text-luna/65">
+                    © 2026 Afterdark
+                </p>
+
+            </div>
 
         </footer>
+
 
 
     </body>
