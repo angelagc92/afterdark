@@ -62,6 +62,8 @@ afterdark/
 ├── assets/
 │   ├── icons/                 # SVG icons and interface controls
 │   └── img/                   # Logos, backgrounds, and illustrations
+├── css/
+│   └── styles.css             # Custom styles and visual design
 ├── js/
 │   └── main.js                # JavaScript interactions and DOM logic
 ├── pages/
