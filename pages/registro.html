@@ -2,18 +2,28 @@
 <html lang="es">
 
     <head>
+        <!-- Metadatos -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>Crea tu cuenta | Afterdark</title>
 
-        <script src="https://cdn.tailwindcss.com"></script>
-
+        <!-- Favicon -->
         <link rel="icon" type="image/png" href="../assets/img/favicon.png">
 
+        <!-- Tipografías -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600&display=swap" rel="stylesheet">
 
+        <link href="https://fonts.googleapis.com/css2?family=Literata:wght@200;300;400;500;600&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Configuración del Tailwind -->
         <script>
             tailwind.config = {
                 theme: {
@@ -25,13 +35,18 @@
                             luna: '#F4EFFA'
                         },
                         fontFamily: {
-                            serif: ['Literata', 'Georgia', 'serif']
-                        }
-                    }
-                }
+                            serif: ['Literata', 'Georgia', 'serif'],
+                            sans: ['DM Sans', 'sans-serif']
+                        },
+                    },
+                },
             }
         </script>
 
+        <!-- Estilos propios -->
+        <link rel="stylesheet" href="../css/style.css">
+
+        <!-- Javascript -->
         <script src="../js/main.js" defer></script>
     </head>
 
